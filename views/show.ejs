@@ -1,0 +1,40 @@
+<div class="col-sm-2">
+</div>
+<div class="col-sm-8" style="text-align: center">
+  <h1 style="color: white; font-size: 80px; font-weight: bold "><%= movie.Title %>
+</h1>
+<div class="well" style='height: 100%'>
+  <section class="row">
+    <div class="col-sm-6" style="text-align: center">
+      <% if( movie.Poster !== 'N/A') { %>
+        <div class="col-sm-6">
+          <img src="<%= movie.Poster %>" style="border: 15px solid black; border-radius:25px; height: 450px; width: 400px">
+        </div>
+      <% } else { %>
+        <div class="col-sm-6" style="height: 420px; width: 200px;">
+          <img src='http://i.imgur.com/dpxkd93.png' style=' border: 15px solid red; border-radius: 25px; height:400px; width: 400px'>
+        </div>
+      <% } %>
+    </div>
+    <div class="col-sm-6" style="text-align:center position: relative; top:100px;">
+      <p style="font-weight: bold; font-size: 15px"><%= movie.Title %> is RATED : <%= movie.Rated %><br><br>
+      DIRECTOR : <%= movie.Director %><br><br>
+      ACTORS : <%= movie.Actors %><br><br>
+      GENRE : <%= movie.Genre %><br><br>
+      RUNTIME : <%= movie.Runtime %><br><br>
+      IMDB RATING : <%= movie.imdbRating %></p>
+      <br><br>
+      <form method='POST' action='/favorites' style='position: relative; top:-20px'>
+        <input type='hidden' value='<%= movie.imdbID %>' name='imdbID'>
+        <input type='hidden' value='<%= movie.Title %>' name='title'>
+        <input type='hidden' value='<%= movie.Year %>' name='year'>
+        <input type='hidden' value='<%= movie.Poster %>' name='poster'>
+        <input type='submit' class='btn btn-default' value='Add to Favorite Movies'>
+      </form>
+      <a href="<%= lastPage %>">Back to your search</a>
+    </div>
+  </section>
+  <p style="font-weight: bold; color: blue; font-size: 20px; position: relative; top: 20px"><%= movie.Plot %></p>
+</div>
+<div class="col-sm-2">
+</div>

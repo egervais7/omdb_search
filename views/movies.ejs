@@ -1,0 +1,17 @@
+<div class="col-sm-3">
+</div>
+<div class="col-sm-6" style="text-align: center">
+  <h1 style="color: white">Movie DataBase Search Results</h1>
+  <% movies.forEach(function(movie){ %>
+    <div class="well">
+      <% if(movie.Poster !== 'N/A') { %>
+      <img src="<%= movie.Poster %>" style="height: 125px; width: 125px; position: relative; float:left">
+      <% } else { %>
+      <img src='http://i.imgur.com/dpxkd93.png' style='height: 125px; width: 125px; position: relative; float: left'>
+      <% } %>
+      <a href="<%= '/movies/' + movie.imdbID + '/?q=' + q %>"><h2><%= movie.Title %><br><small><%= movie.Year %><br> <%= movie.Type %></small></h2></a>
+    </div>
+  <% }); %>
+</div>
+<div class="col-sm-3">
+</div>

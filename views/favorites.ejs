@@ -1,0 +1,20 @@
+<section class='row text-center'>
+  <h1 style='color: white; font-weight:bold'>FAVORITES!!</h1>
+</section>
+<section class="row">
+  <div class="col-sm-2">
+  </div>
+  <div class='col-sm-8'>
+    <section class='row'>
+      <% favorites.forEach(function(favorites){ %>
+        <div class="well">
+          <a href='/movies/<%= favorites.imdbId%>'><h2><%= favorites.title %><br><small><%= favorites.year %></a>
+          <a href='/favorites/<%= favorites.id %>' class='delete-button btn btn-danger' style='float:right; position:relative; top: -25px'>Delete</a>
+          <a href='/favorites/<%= favorites.id %>/comments' class='btn btn-info' style='float:right; position:relative; top: -25px'>Add Comment</a>
+        </div>
+      <% }); %>
+    </section>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</section>

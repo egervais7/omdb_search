@@ -1,0 +1,22 @@
+<section class='row text-center'>
+  <h1 style='color:white; font-size:40px'> Tags for <%= favorite.title %> </h1>
+</section>
+<section class='row text-center'>
+  <div class='col-sm-3'>
+  </div>
+  <div class='col-sm-6'>
+    <form action='/tags' method='POST' role='form'>
+      <h2 style='color:white; font-size:35px'>Add new tag!</h2>
+      <div class='form-group'>
+        <input type='text' class='form-control' placeholder='Type Tag Here' id='tag' name='tag'>
+      </div>
+    </form>
+    <% tags.forEach(function(tag) { %>
+      <div class='well'>
+        <h2><%= tags.tag %></h2>
+      </div>
+    <% }); %>
+  </div>
+  <div class='col-sm-3'>
+  </div>
+</section>
